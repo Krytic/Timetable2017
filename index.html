@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function start() {
+        createTimetable();
+      }
+
+      function createTimetable() {
+
+        var selectedStartIndex = document.getElementById("time_select_start").selectedIndex;
+        var selectedStartValue = document.getElementById("time_select_start").options[selectedStartIndex].text;
+        var startTime = parseInt(selectedStartValue.slice(0, -2));
+        var morning = (selectedStartValue.slice(-2) == "AM");
+
+        var selectedFinishIndex = document.getElementById("time_select_last").selectedIndex;
+        var selectedFinishValue = document.getElementById("time_select_last").options[selectedFinishIndex].text;
+        var finishTime = parseInt(selectedFinishValue.slice(0, -2));
+        var afternoon = (selectedFinishValue.slice(-2) == "PM");
+
+        var tt = "";
+        if (morning && !morning) {
+          for (var i = startTime; i < 12; i++) {
+            tt += '<li class="times">' + i + 'AM</li>';
+          }
+            tt += '<li class="times">12PM</li>';
+          for (var i = 1; i < finishTime; i++) {
+            tt += '<li class="times">' + i + 'PM</li>';
+          }
+        } if (!afternoon && morning) {
+            for (var i = startTime; i < finishTime; i++) {
+              tt += '<li class="times">' + i + 'AM</li>';
+            }
+        }
+        if (afternoon && !morning) {
+          for (var i = startTime; i < finishTime; i++) {
+            tt += '<li class="times">' + i + 'PM</li>';
+          }
+        }
+
+        document.getElementById('timetable').innerHTML = tt;
+      }
+    </script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .times {
+        font-size: 18px;
+        color: #333;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      .times .dropdown_button{
+
+      }
+
+      #content {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #time {
+        font-size: 42px;
+      }
+
+      #time_select {
+        list-style: none;
+        padding-left: 0px;
+      }
+
+      #timetable {
+        list-style: none;
+        padding-left: 0px;
+      }
+    </style>
+  </head>
+  <body onLoad="start()">
+    <div id="content">
+      <div style="font-size: 18px"><center>Wednesday</center></div>
+      <div id="time"><center>11:42PM</center></div>
+      <form>
+        <ul id="time_select">
+          <li>
+            <select id="time_select_start" onchange="createTimetable()">
+              <option value="8am">8AM</option>
+                <option value="9am">9AM</option>
+                <option value="10am">10AM</option>
+                <option value="11am">11AM</option>
+                <option value="12pm">12PM</option>
+                <option value="1pm">1PM</option>
+                <option value="2pm">2PM</option>
+                <option value="3pm">3PM</option>
+                <option value="4pm">4PM</option>
+                <option value="5pm">5PM</option>
+                <option value="6pm">6PM</option>
+            </select>
+          </li>
+          <li>
+            <select id="time_select_last" onchange="createTimetable()">
+              <option value="9am">9AM</option>
+              <option value="10am">10AM</option>
+              <option value="11am">11AM</option>
+              <option value="12pm">12PM</option>
+              <option value="1pm">1PM</option>
+              <option value="2pm">2PM</option>
+              <option value="3pm">3PM</option>
+              <option value="4pm">4PM</option>
+              <option value="5pm">5PM</option>
+              <option value="6pm">6PM</option>
+              <option value="7pm">7PM</option>
+            </select>
+          </li>
+        </ul>
+      </form>
+      <ul id="timetable">
+      </ul>
+    </div>
+  </body>
+</html>
