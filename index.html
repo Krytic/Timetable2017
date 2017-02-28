@@ -19,7 +19,11 @@
         var afternoon = (selectedFinishValue.slice(-2) == "PM");
 
         var tt = "";
-        if (morning && !morning) {
+        if (!afternoon && morning) {
+            for (var i = startTime; i < finishTime; i++) {
+              tt += '<li class="times">' + i + 'AM</li>';
+            }
+        } else if (morning && afternoon) {
           for (var i = startTime; i < 12; i++) {
             tt += '<li class="times">' + i + 'AM</li>';
           }
@@ -27,12 +31,7 @@
           for (var i = 1; i < finishTime; i++) {
             tt += '<li class="times">' + i + 'PM</li>';
           }
-        } if (!afternoon && morning) {
-            for (var i = startTime; i < finishTime; i++) {
-              tt += '<li class="times">' + i + 'AM</li>';
-            }
-        }
-        if (afternoon && !morning) {
+        } else if (afternoon && !morning) {
           for (var i = startTime; i < finishTime; i++) {
             tt += '<li class="times">' + i + 'PM</li>';
           }
@@ -47,28 +46,68 @@
       }
 
       .times {
-        font-size: 18px;
+        font-size: 1.2em;
         color: #333;
         padding: 5px;
         margin: 5px;
-      }
-
-      .times .dropdown_button{
-
+        width: 280px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 1px solid #ccc;
+        margin: auto;
+        text-align: center;
       }
 
       #content {
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
       }
 
       #time {
-        font-size: 42px;
+        font-size: 3em;
+        text-align: center;
+      }
+
+      #day {
+        font-size: 2em;
+        text-align: center;
       }
 
       #time_select {
         list-style: none;
-        padding-left: 0px;
+        padding: 0px;
+        width: 260px;
+
+        margin: auto;
+      }
+
+      #time_select li {
+        display: inline;
+      }
+
+      #time_select_start {
+        padding: 12px 20px;
+        margin: 0px 0;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 1.5em;
+
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+      }
+
+      #time_select_last {
+        padding: 12px 20px;
+        margin: 0px 0;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 1.5em;
+
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
       }
 
       #timetable {
@@ -79,23 +118,23 @@
   </head>
   <body onLoad="start()">
     <div id="content">
-      <div style="font-size: 18px"><center>Wednesday</center></div>
-      <div id="time"><center>11:42PM</center></div>
+      <div id="day">Wednesday</div>
+      <div id="time">11:42PM</div>
       <form>
         <ul id="time_select">
           <li>
             <select id="time_select_start" onchange="createTimetable()">
               <option value="8am">8AM</option>
-                <option value="9am">9AM</option>
-                <option value="10am">10AM</option>
-                <option value="11am">11AM</option>
-                <option value="12pm">12PM</option>
-                <option value="1pm">1PM</option>
-                <option value="2pm">2PM</option>
-                <option value="3pm">3PM</option>
-                <option value="4pm">4PM</option>
-                <option value="5pm">5PM</option>
-                <option value="6pm">6PM</option>
+              <option value="9am">9AM</option>
+              <option value="10am">10AM</option>
+              <option value="11am">11AM</option>
+              <option value="12pm">12PM</option>
+              <option value="1pm">1PM</option>
+              <option value="2pm">2PM</option>
+              <option value="3pm">3PM</option>
+              <option value="4pm">4PM</option>
+              <option value="5pm">5PM</option>
+              <option value="6pm">6PM</option>
             </select>
           </li>
           <li>
