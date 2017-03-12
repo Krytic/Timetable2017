@@ -1,0 +1,83 @@
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.times {
+  font-size: 1.2em;
+  color: #333;
+  padding: 5px;
+  margin: 5px;
+  width: 280px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #ccc;
+  margin: auto;
+  text-align: center;
+}
+
+#content {
+  margin: auto;
+}
+
+#header {
+  background-image: linear-gradient(120deg, #155799, #159957);
+  color: white;
+  font-weight: bold;
+}
+
+#time {
+  font-size: 3em;
+  text-align: center;
+}
+
+#day {
+  font-size: 2em;
+  text-align: center;
+}
+
+#time_select {
+  list-style: none;
+  padding: 0px;
+  width: 80%;
+
+  margin: auto;
+}
+
+#time_select li {
+  display: inline;
+}
+
+#time_select_start {
+  padding: 12px 20px;
+  margin: 0px 0;
+  border: 0px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  width: 50%;
+  text-align: center;
+
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+#time_select_last {
+  padding: 12px 20px;
+  margin: 0px 0;
+  border: 0px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  width: 50%;
+  text-align: center;
+
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+#timetable {
+  list-style: none;
+  padding-left: 0px;
+}
