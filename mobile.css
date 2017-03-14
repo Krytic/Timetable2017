@@ -15,6 +15,10 @@ body {
   text-align: center;
 }
 
+.peoplelist {
+  font-size: 1em;
+}
+
 #content {
   margin: auto;
 }
@@ -37,22 +41,20 @@ body {
 #time_select {
   list-style: none;
   padding: 0px;
-  width: 80%;
 
   margin: auto;
 }
 
 #time_select li {
   display: inline;
+  width: 30%;
 }
 
 #time_select_start {
   padding: 12px 20px;
-  margin: 0px 0;
   border: 0px solid #ccc;
   box-sizing: border-box;
   font-size: 1.5em;
-  width: 50%;
   text-align: center;
 
   border-bottom-left-radius: 30px;
@@ -63,11 +65,9 @@ body {
 
 #time_select_last {
   padding: 12px 20px;
-  margin: 0px 0;
   border: 0px solid #ccc;
   box-sizing: border-box;
   font-size: 1.5em;
-  width: 50%;
   text-align: center;
 
   border-bottom-left-radius: 0px;

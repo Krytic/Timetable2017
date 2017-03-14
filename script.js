@@ -36,18 +36,18 @@ function createTimetable() {
   var afternoon = (selectedFinishValue.slice(-2) == "PM");
 
   var tt = "";
-  var template = '<li class="times">%1%2%3</li>';
+  var template = '<li class="times">%1%2<span class="peoplelist">%3</span></li>';
   if (!afternoon && morning) {
       for (var i = startTime; i < finishTime; i++) {
         tt += template.replace('%1', i).replace('%2', "AM").replace("%3", getTimetableList (getDay(), i + "AM"));
       }
   } else if (morning && afternoon) {
     for (var i = startTime; i < 12; i++) {
-      tt += template.replace('%1', i).replace('%2', "AM").replace("%3", getPeopleList (i + "AM"));
+      tt += template.replace('%1', i).replace('%2', "AM").replace("%3", getTimetableList (getDay(), i + "AM"));
     }
-      tt += '<li class="times">12PM</li>';
+      tt += template.replace('%1', i).replace('%2', "PM").replace("%3", getTimetableList (getDay(), "12PM"));
     for (var i = 1; i < finishTime; i++) {
-      tt += template.replace('%1', i).replace('%2', "PM").replace("%3", getPeopleList (i + "PM"));
+      tt += template.replace('%1', i).replace('%2', "PM").replace("%3", getTimetableList (getDay(), i + "PM"));
     }
   } else if (afternoon && !morning) {
     for (var i = startTime; i < finishTime; i++) {
