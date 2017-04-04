@@ -1,6 +1,29 @@
 function start() {
-  createTimetable();
+
   setInterval(updateTime, 100);
+  var option1 = document.getElementById("time_select_start");
+  console.log(option1.selectedIndex);
+  for (var i = 0; i < option1.length; i++) {
+    option1.selectedIndex = i;
+    var hours = getHours();
+    if (option1.value == hours.toLowerCase()) {
+      i = option1.length;
+    }
+  }
+  document.getElementById("time_select_last").selectedIndex = option1.length - 1;
+  createTimetable();
+}
+
+function getHours() {
+  hours = new Date().getHours();
+  if (hours > 12) {
+    hours = ((hours % 12) ) + "PM";
+  } else if (hours == 12) {
+    hours = "12PM"
+  } else {
+    hours = hours + "AM";
+  }
+  return hours;
 }
 
 function getDay() {
@@ -20,7 +43,7 @@ function updateTime() {
   var date = new Date();
 
   document.getElementById("day").innerHTML = getDay();
-  document.getElementById("time").innerHTML = (date.getHours() % 13) + ":" + date.getMinutes() + (date.getHours() > 11 ? "PM" : "AM");
+  document.getElementById("time").innerHTML = getHours().substr(0, getHours().length - 2) + ":" + date.getMinutes() + getHours().substr(getHours().length - 2, getHours().length);
 }
 
 function createTimetable() {
@@ -59,7 +82,7 @@ function createTimetable() {
 }
 
 function getNames () {
-  return ["Sean", "Ryan", "Pierce", "Connor"];
+  return ["Sean", "Ryan", "Pierce", "Connor", "Scott", "Girish"];
 }
 
 function getTimetableList (day, time) {

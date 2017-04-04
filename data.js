@@ -5,7 +5,8 @@ data = {
         "Sean",
         "Ryan",
         "Pierce",
-        "Connor"
+        "Connor",
+        "Girish"
       ]
     },
     "9AM": {
@@ -16,7 +17,8 @@ data = {
     "10AM": {
       "Physics 244": [
         "Connor",
-        "Pierce"
+        "Pierce",
+        "Girish"
       ]
     },
     "11AM": {
@@ -31,32 +33,49 @@ data = {
     },
     "2PM": {
       "Computer Science 210": [
-        "Sean"
+        "Sean",
+        "Scott"
       ]
     },
     "4PM": {
       "Maths 253": [
         "Sean",
         "Connor",
-        "Pierce"
+        "Pierce",
+        "Girish"
+      ],
+      "Computer Science 210": [
+        "Scott"
+      ]
+    },
+    "5PM": {
+      "Computer Science 220": [
+        "Scott"
       ]
     }
   },
   "Tuesday" : {
     "9AM": {
       "Computer Science 210": [
-        "Sean"
+        "Sean",
+        "Scott"
       ]
     },
     "10AM": {
       "Physics 244": [
         "Connor",
-        "Pierce"
+        "Pierce",
+        "Girish"
       ]
     },
     "11AM": {
       "Maths 250": [
         "Ryan"
+      ]
+    },
+    "12PM": {
+      "Computer Science 230": [
+        "Scott"
       ]
     },
     "1PM": {
@@ -67,6 +86,9 @@ data = {
     "2PM": {
       "Physics 202": [
         "Sean"
+      ],
+      "Computer Science 215": [
+        "Scott"
       ],
       "Physics 244": [
         "Connor",
@@ -80,6 +102,9 @@ data = {
       "Physics 202": [
         "Sean"
       ],
+      "Computer Science 230": [
+        "Scott"
+      ],
       "Physics 244": [
         "Connor",
         "Pierce"
@@ -92,11 +117,17 @@ data = {
       "Physics 244": [
         "Connor",
         "Pierce"
+      ],
+      "SciSchol 201": [
+        "Girish"
       ]
     },
     "5PM": {
       "Computer Science 225": [
         "Sean"
+      ],
+      "SciSchol 201": [
+        "Girish"
       ]
     }
   },
@@ -111,12 +142,24 @@ data = {
         "Sean",
         "Connor",
         "Pierce",
-        "Ryan"
+        "Ryan",
+        "Girish"
+      ],
+      "Computer Science 215": [
+        "Scott"
       ]
     },
     "11AM" : {
       "Maths 250": [
         "Ryan"
+      ]
+    },
+    "12PM" : {
+      "Computer Science 220": [
+        "Scott"
+      ],
+      "Physics 140": [
+        "Girish"
       ]
     },
     "1PM" : {
@@ -125,39 +168,52 @@ data = {
       ],
       "Maths 260": [
         "Ryan"
+      ],
+      "Physics 140": [
+        "Girish"
       ]
     },
     "2PM" : {
       "Italian 106G": [
         "Ryan"
+      ],
+      "Computer Science 215": [
+        "Scott"
+      ],
+      "Physics 140": [
+        "Girish"
       ]
     },
     "3PM" : {
       "Physics 202": [
         "Connor",
         "Pierce",
-        "Ryan"
+        "Ryan",
+        "Girish"
       ]
     },
     "4PM" : {
       "Physics 202": [
         "Connor",
         "Pierce",
-        "Ryan"
+        "Ryan",
+        "Girish"
       ]
     },
     "5PM" : {
       "Physics 202": [
         "Connor",
         "Pierce",
-        "Ryan"
+        "Ryan",
+        "Girish"
       ]
     }
   },
   "Thursday" : {
     "9AM" : {
       "Computer Science 210": [
-        "Sean"
+        "Sean",
+        "Scott"
       ],
       "Maths 260": [
         "Ryan"
@@ -168,13 +224,18 @@ data = {
         "Sean",
         "Connor",
         "Pierce",
-        "Ryan"
+        "Ryan",
+        "Girish"
       ]
     },
     "11AM" : {
       "Maths 255": [
-        "Connor"
-      ]
+        "Connor",
+        "Girish"
+      ],
+      "Computer Science 230": [
+        "Scott"
+      ],
     },
     "12PM" : {
       "Computer Science 225": [
@@ -182,7 +243,8 @@ data = {
       ],
       "Maths 253": [
         "Connor",
-        "Pierce"
+        "Pierce",
+        "Girish"
       ]
     },
     "2PM" : {
@@ -191,13 +253,22 @@ data = {
       ],
       "Italian 106G": [
         "Ryan"
+      ],
+      "Computer Science 215": [
+        "Scott"
       ]
     },
     "3PM" : {
       "Maths 253": [
         "Sean",
         "Connor",
-        "Pierce"
+        "Pierce",
+        "Girish"
+      ]
+    },
+    "4PM" : {
+      "Computer Science 220": [
+        "Scott"
       ]
     }
   },
@@ -210,7 +281,8 @@ data = {
     "10AM" : {
       "Physics 244": [
         "Connor",
-        "Pierce"
+        "Pierce",
+        "Girish"
       ]
     },
     "11AM" : {
@@ -218,17 +290,22 @@ data = {
         "Sean"
       ],
       "Maths 255": [
-        "Connor"
+        "Connor",
+        "Girish"
       ]
     },
     "12PM" : {
       "Physics 202": [
         "Sean",
         "Connor",
-        "Ryan"
+        "Ryan",
+        "Girish"
       ],
       "Electeng 210": [
         "Pierce"
+      ],
+      "Computer Science 230": [
+        "Scott"
       ]
     },
     "1PM" : {
@@ -239,6 +316,9 @@ data = {
     "2PM" : {
       "Italian 106G": [
         "Ryan"
+      ],
+      "Physics 244": [
+        "Girish"
       ]
     },
     "3PM" : {
@@ -246,11 +326,20 @@ data = {
         "Sean",
         "Connor",
         "Pierce"
+      ],
+      "Computer Science 220": [
+        "Scott"
+      ],
+      "Physics 244": [
+        "Girish"
       ]
     },
     "4PM" : {
       "Computer Science 210": [
         "Sean"
+      ],
+      "Physics 244": [
+        "Girish"
       ]
     }
   }
