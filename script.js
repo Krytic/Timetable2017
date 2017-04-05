@@ -11,6 +11,10 @@ function start() {
     }
   }
   document.getElementById("time_select_last").selectedIndex = option1.length - 1;
+  var date = new Date();
+  if (date.getDay() < 6 && date.getDay() > 0) {
+    document.getElementById("day_select").selectedIndex = date.getDay() - 1;
+  }
   createTimetable();
 }
 
@@ -26,24 +30,20 @@ function getHours() {
   return hours;
 }
 
-function getDay() {
-  var date = new Date();
-  var weekday = new Array(7);
-  weekday[0] =  "Sunday";
-  weekday[1] = "Monday";
-  weekday[2] = "Tuesday";
-  weekday[3] = "Wednesday";
-  weekday[4] = "Thursday";
-  weekday[5] = "Friday";
-  weekday[6] = "Saturday";
-  return weekday[date.getDay()];
+function getDay () {
+  var dayOption = document.getElementById("day_select");
+  var dayIndex = dayOption.selectedIndex;
+  return dayOption.options[dayIndex].text;
 }
 
 function updateTime() {
   var date = new Date();
-
-  document.getElementById("day").innerHTML = getDay();
-  document.getElementById("time").innerHTML = getHours().substr(0, getHours().length - 2) + ":" + date.getMinutes() + getHours().substr(getHours().length - 2, getHours().length);
+  var minutes = date.getMinutes() + "";
+  if (minutes.length == 1) {
+    minutes = "0" + minutes;
+  }
+  document.getElementById("time").innerHTML = getHours().substr(0, getHours().length - 2)
+  + ":" + date.getMinutes() + getHours().substr(getHours().length - 2, getHours().length);
 }
 
 function createTimetable() {
@@ -73,8 +73,15 @@ function createTimetable() {
       tt += template.replace('%1', i).replace('%2', "PM").replace("%3", getTimetableList (getDay(), i + "PM"));
     }
   } else if (afternoon && !morning) {
-    for (var i = startTime; i < finishTime; i++) {
-      tt += template.replace('%1', i).replace('%2', "PM").replace("%3", getTimetableList (getDay(), i + "PM"));
+    if (startTime == 12) {
+      tt += template.replace('%1', 12).replace('%2', "PM").replace("%3", getTimetableList (getDay(), 12 + "PM"));
+      for (var i = 1; i < finishTime; i++) {
+        tt += template.replace('%1', i).replace('%2', "PM").replace("%3", getTimetableList (getDay(), i + "PM"));
+      }
+    } else {
+      for (var i = startTime; i < finishTime; i++) {
+        tt += template.replace('%1', i).replace('%2', "PM").replace("%3", getTimetableList (getDay(), i + "PM"));
+      }
     }
   }
 

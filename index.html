@@ -8,7 +8,15 @@
   <body onLoad="start()">
     <div id="content">
     <div id="header">
-      <div id="day"></div>
+      <div id="day">
+        <select id="day_select" onchange="createTimetable()">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+        </select>
+      </div>
       <div id="time"></div>
       <form><center>
         <ul id="time_select">
